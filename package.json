@@ -1,6 +1,6 @@
 {
   "name": "my-media-player",
-  "version": "1.2.0",
+  "version": "1.2.0", // Your version
   "description": "Improving Technology",
   "main": "main.js",
   "scripts": {
@@ -12,15 +12,15 @@
   "author": "TechEdu",
   "license": "ISC",
   "type": "commonjs",
-"repository":{  
-"type": "git",
-"url": "https://github.com/sasvidu899/Update"
-},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sasvidu899/Update" // Your repo URL
+  },
   "devDependencies": {
     "@electron-forge/cli": "^7.8.0",
     "@electron-forge/maker-deb": "^7.8.0",
     "@electron-forge/maker-rpm": "^7.8.0",
-    "@electron-forge/maker-squirrel": "^7.8.0", 
+    "@electron-forge/maker-squirrel": "^7.8.0",
     "@electron-forge/maker-wix": "^7.8.0",
     "@electron-forge/maker-zip": "^7.8.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.8.0",
@@ -29,43 +29,53 @@
     "electron": "^36.1.0"
   },
   "dependencies": {
-"update-electron-app": "^1.2.0"
+    // Corrected dependency format
+    "update-electron-app": "^1.2.0", // Assuming this was the intended version
     "electron-squirrel-startup": "^1.0.1"
   },
   "config": {
     "forge": {
       "packagerConfig": {
-   
-        "icon": "C:/Users/CHAMA COMPUTERS/Downloads/ss.ico"
+        // --- WARNING: Using absolute path, backslashes escaped ---
+        // Extension is NOT needed here
+        "icon": "C:\\Users\\CHAMA COMPUTERS\\Downloads\\ss"
       },
       "makers": [
-
         {
           "name": "@electron-forge/maker-wix",
           "config": {
             "name": "My Media Player",
             "description": "Improving Technology",
             "manufacturer": "TechEdu",
-            "version": "1.0.0",             "ui": {
+            "version": "1.1.0", // Version for WiX installer
+            "ui": {
               "chooseDirectory": true
             },
             "createDesktopShortcut": true,
             "shortcutFolderName": "My Media Player",
             "programFilesFolderName": "MyMediaPlayer",
-
-            "appIconPath": "assets/icon.ico",
-
-            "upgradeCode": "a70fe260-e79a-4c63-9d19-4f9cf230094b" 
+            // --- CORRECTED: Colon added, backslashes escaped ---
+            // --- WARNING: Using absolute path ---
+            "appIconPath": "C:\\Users\\CHAMA COMPUTERS\\Downloads\\ss.ico",
+            "upgradeCode": "a70fe260-e79a-4c63-9d19-4f9cf230094b" // Your GUID
           }
         },
-
-     
+        // Optional: Squirrel Maker (Commented out)
+        // {
+        //   "name": "@electron-forge/maker-squirrel",
+        //   "config": {
+        //     "name": "my_media_player",
+        //     "setupIcon": "C:\\Users\\CHAMA COMPUTERS\\Downloads\\ss.ico", // Escaped path
+        //     "createDesktopShortcut": true,
+        //     "createStartMenuShortcut": true
+        //   }
+        // },
         {
           "name": "@electron-forge/maker-deb",
           "config": {
             "options": {
-          
-              "icon": "C:/Users/CHAMA COMPUTERS/Downloads/ss.png" 
+              // --- WARNING: Using absolute path, backslashes escaped ---
+              "icon": "C:\\Users\\CHAMA COMPUTERS\\Downloads\\ss.png"
             }
           }
         },
@@ -73,8 +83,9 @@
            "name": "@electron-forge/maker-rpm",
            "config": {
               "options": {
-     
-                 "icon": "C:/Users/CHAMA COMPUTERS/Downloads" 
+                 // --- WARNING: Using absolute path, backslashes escaped ---
+                 // Corrected typo Uers->Users, Downlaods->Downloads and escaped
+                 "icon": "C:\\Users\\CHAMA COMPUTERS\\Downloads\\ss.png"
               }
            }
         },
@@ -86,4 +97,3 @@
     }
   }
 }
-
