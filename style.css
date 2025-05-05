@@ -1,0 +1,163 @@
+/* Reset and Basic Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Nicer font */
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px; /* Add some space at the top */
+    min-height: 100vh; /* Ensure body takes full height */
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #00aaff; /* Heading color */
+}
+
+/* Player Container Styles - UPDATED FOR LAYOUT */
+#player-container {
+    background-color: #2b2b2b; /* Slightly lighter dark for container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    width: 90%; /* Use percentage width */
+    max-width: 900px; /* Set a max-width (adjust as needed) */
+    border: 1px solid #444; /* Subtle border */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically (video above controls) */
+    align-items: center; /* Center items horizontally */
+    margin-bottom: 30px; /* Add some space at the bottom */
+}
+
+/* Video Element Styles - UPDATED FOR LAYOUT */
+#mediaPlayer { /* Changed from audio to video */
+    width: 100%; /* Take full width of the container */
+    height: auto; /* Let height adjust based on width/aspect ratio */
+    /* Remove or drastically increase max-height to allow larger video */
+    /* max-height: 600px; */ /* Example: Increased max-height */
+    display: block; /* Ensure it takes space */
+    background-color: #000; /* Background when no video is loaded */
+    border-radius: 5px; /* Rounded corners for video */
+    margin-bottom: 15px; /* Space between video and controls */
+}
+
+/* Controls Container Styles - UPDATED FOR LAYOUT */
+#controls {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center controls horizontally */
+    gap: 12px; /* Adjust gap between controls */
+    flex-wrap: wrap; /* Allow controls to wrap on smaller widths */
+    width: 100%; /* Take full width */
+    padding-top: 10px; /* Add some space above controls */
+}
+
+/* --- Button Styles (From previous step) --- */
+#controls button {
+    background-color: transparent; /* Transparent background */
+    color: #e0e0e0; /* Light icon/text color */
+    border: 1px solid #555; /* Subtle border */
+    border-radius: 50%; /* Make buttons round */
+    cursor: pointer;
+    font-size: 18px; /* Increase icon size */
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    display: flex; /* Center icon inside */
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease; /* Smooth transition */
+    outline: none; /* Remove default outline */
+}
+
+/* Specific style for Open button (maybe not round) */
+#openBtn {
+    border-radius: 5px; /* Keep open button rectangular */
+    width: auto; /* Auto width */
+    padding: 0 12px; /* Add padding */
+    font-size: 14px; /* Smaller font size */
+}
+
+#controls button:hover {
+    background-color: #4f4f4f; /* Slightly lighter hover background */
+    border-color: #777;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Style for keyboard focus - shows an outline when using Tab key */
+#controls button:focus-visible {
+     box-shadow: 0 0 0 2px rgba(0, 170, 255, 0.6); /* Blue outline */
+}
+
+/* --- Range Slider Styles (From previous step) --- */
+input[type="range"] {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    background: transparent; /* Remove default background */
+    cursor: pointer;
+    flex-grow: 1; /* Allow seek bar to grow */
+    height: 20px; /* Increase clickable area height */
+    outline: none; /* Remove default outline */
+}
+
+/* Volume bar width */
+#volumeBar {
+    flex-grow: 0; /* Don't let volume bar grow */
+    width: 100px; /* Fixed width for volume */
+}
+
+/* Style for keyboard focus on sliders */
+input[type="range"]:focus-visible::-webkit-slider-thumb {
+     box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.5);
+}
+input[type="range"]:focus-visible::-moz-range-thumb {
+     box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.5);
+}
+
+/* Track Style */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #444; /* Slightly lighter track */
+    height: 8px; /* Slightly thicker track */
+    border-radius: 4px;
+}
+input[type="range"]::-moz-range-track { /* Firefox */
+    background: #444;
+    height: 8px;
+    border-radius: 4px;
+}
+
+/* Thumb (Handle) Style */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -4px; /* Adjust thumb position: (track_height - thumb_height) / 2 = (8 - 16) / 2 = -4px */
+    background-color: #00aaff; /* Highlight color for thumb */
+    height: 16px;
+    width: 16px;
+    border-radius: 50%; /* Round thumb */
+    border: none; /* Remove border */
+    transition: transform 0.1s ease; /* Add transition for thumb */
+}
+
+input[type="range"]::-moz-range-thumb { /* Firefox */
+    background-color: #00aaff;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: none;
+    transition: transform 0.1s ease;
+}
+
+/* Optional: Thumb active/hover style */
+input[type="range"]:active::-webkit-slider-thumb {
+    transform: scale(1.1); /* Make thumb slightly bigger when clicked/dragged */
+}
+input[type="range"]:active::-moz-range-thumb {
+    transform: scale(1.1);
+}
