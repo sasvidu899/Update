@@ -1,3 +1,5 @@
+require('update-electron-app')();
+
 // main.js
 
 // Import karaganna ona modules
